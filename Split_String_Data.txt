@@ -1,7 +1,7 @@
 
 #Repos of @YUDA, 3 June 2022
 //================================================================================================================
-// Your String Input must be = 111,111,111  "," will be splitted and convert the data to variable, tested in C#  
+// Your String Input must be = 111,111,111  "," will be splitted and convert data to variable, tested in C#  
 //================================================================================================================
 //Step 1 (if there is/are data of index is empty, data will be removed from index
 //================================================================================================================
