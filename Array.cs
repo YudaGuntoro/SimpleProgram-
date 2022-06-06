@@ -1,4 +1,6 @@
-  static public void Main(string[] args)
+#Repos of @YUDA, 6 June 2022  
+
+static public void Main(string[] args)
         {
             var numbers = new[] { 3, 7, 9, 2, 14, 6 }; // 6 Index 
 
