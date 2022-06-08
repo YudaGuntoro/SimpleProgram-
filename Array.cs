@@ -65,5 +65,17 @@ static public void Main(string[] args)
                 {  
                    Console.Write("{0}  ", arr[i]);  
                 } 
-                   Console.Write("\n");	
+                   Console.Write("\n"); 
+        
+                string[] array = { "cat", "dot", "deves" };
+                // Use Array.Exists in different ways.
+                bool a = Array.Exists(array, element => element == "deves");
+                bool b = Array.Exists(array, element => element == "python");
+                bool c = Array.Exists(array, element => element.StartsWith("d"));
+                bool d = Array.Exists(array, element => element.StartsWith("x"));
 
+                // Display bools.       //Output
+                Console.WriteLine(a);   //True
+                Console.WriteLine(b);   //False
+                Console.WriteLine(c);   //True
+                Console.WriteLine(d);   //False
