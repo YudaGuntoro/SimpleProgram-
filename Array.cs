@@ -66,7 +66,8 @@ static public void Main(string[] args)
                    Console.Write("{0}  ", arr[i]);  
                 } 
                    Console.Write("\n"); 
-        
+       
+                // Check array if exist.
                 string[] array = { "cat", "dot", "deves" };
                 // Use Array.Exists in different ways.
                 bool a = Array.Exists(array, element => element == "deves");
@@ -79,3 +80,27 @@ static public void Main(string[] args)
                 Console.WriteLine(b);   //False
                 Console.WriteLine(c);   //True
                 Console.WriteLine(d);   //False
+
+        
+        var myInts = new List<int>();
+            int tryConvert;
+            while (myInts.Count < 100)
+            {
+                Console.WriteLine("Enter a number not already in list: ");
+                var userEntry = Console.ReadLine();
+                if (int.TryParse(userEntry, out tryConvert))
+                {
+                    // if WAS able to convert to a number, now check if in the list
+                    if (myInts.Contains(tryConvert))
+                        Console.WriteLine("Number already in list");
+                    else
+                        myInts.Add(tryConvert);
+                }
+                else
+                {
+                    // allow user to enter a "Q" to quit vs adding all 100 entries
+                    if (userEntry == "Q")
+                        break;
+
+                    Console.WriteLine("Not a valid number");
+                }
