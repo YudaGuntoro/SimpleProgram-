@@ -1,6 +1,9 @@
-[
+[  // => {Perlu Array Jika Objek lebih dari Satu
+   // => {Untuk menampilkan dalam array maka perlu dikeluarkan dulu untuk masuk ke dalam objek -> pada syntax c# 
+   // => Bisa pakai Error status atau Response pada Json untuk melihat berhasil atau tidak.
+   // => Request Database bisa tergantung pada ApiKey dan Parameter yang dibutuhkan.
 {
- "id" : "1",
+ "id" : "1",         // Key : Value => Property 
  "author" : "Koki",
  "title" : "ngakak"
  
@@ -14,3 +17,5 @@
  
 }
 ]
+
+
