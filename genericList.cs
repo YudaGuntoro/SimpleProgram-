@@ -64,4 +64,23 @@ public static List<int> GetUniqueNumbers(List<int>numbers)
         
         return uniques;
 }
+
+
+//======================================================================================================
+ List<string> numbersStrLst = new List<string>
+            { 
+                "One", 
+                "Two",
+                "Three",
+                "Four",
+                "Five"
+            };
+
+            foreach (string a in numbersStrLst)   // Menurun
+            {
+                Console.WriteLine(a);
+            }
+
+            Console.WriteLine(String.Join(", ", numbersStrLst)); // Menyamping
+            Console.WriteLine(numbersStrLst[0]);
         
