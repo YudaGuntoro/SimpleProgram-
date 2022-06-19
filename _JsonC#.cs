@@ -13,6 +13,7 @@ public static void Main(string[] args)
             var jo = JObject.Parse(json_data);
             //var id = jo["report"]["Id"].ToString();  //=> Masuk ke Menu
             //var id = jo["Host"].ToString();          //=? Ambil data Id 
+            //var id = jo["products"][1]["images"][1] // Ambil Data Object By Id dan Index Array jo["Object"][Index]["Object"][Index]
             //Console.WriteLine(id);
             Console.WriteLine(jo);
             Console.Read();
