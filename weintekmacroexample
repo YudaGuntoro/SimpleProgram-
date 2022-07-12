@@ -1,0 +1,61 @@
+// Read all data from meter
+// Some requires conversion
+// Some is used for calcs
+
+macro_command main()
+
+int v, a, em111_s, mcb
+float curr, volt, hz, temp_a, temp_v, temp_f
+short check, f, status
+bool em111_ok, em111_vonly
+
+mcb = 32
+
+// Get Data to do compare for lamp status
+
+GetData(v, "GavazziMeters", "UPSO1L-N", 1)
+GetData(a, "GavazziMeters", "UPSO1LC", 1)
+GetData(f, "GavazziMeters", "UPSO1FREQ", 1)
+GetData(check, "GavazziMeters", 3x, 4#8192, 1)
+
+// Make integer values into floats
+
+temp_v = v
+temp_a = a
+temp_f = f
+
+// Do comparison for lamp status with function call
+
+em111_s = em111_stat(v,a,mcb)
+status = em111_s
+em111_ok = em111_on(check)
+
+// Divide data with function call to get
+// real value
+
+volt = l_volt(temp_v)
+curr = ph_curr(temp_a)
+hz = freq(temp_f)
+
+// If voltage but no current make indicator flash
+
+if status == 4 then
+
+    em111_vonly = true
+    
+else
+
+    em111_vonly = false
+    
+end if
+
+// Set Data in Word for Word lamp
+
+SetData(status,"Local HMI", LW, 303, 1)
+SetData(em111_ok, "Local HMI", LB, 103, 1)
+SetData(volt,"Local HMI",LW,60,1)
+SetData(curr,"Local HMI",LW,62,1)
+SetData(hz,"Local HMI", LW, 64, 1)
+SetData(em111_vonly,"Local HMI", LB, 203, 1)
+
+end macro_command
