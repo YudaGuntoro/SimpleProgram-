@@ -1,0 +1,4 @@
+Microsoft.EntityFramework.Core
+Microsoft.EntityFramework.Core.SqlServer
+using System.ComponentModel.DataAnnotations; => [Key]
+using Microsoft.EntityFrameworkCore;=> :DbContext
